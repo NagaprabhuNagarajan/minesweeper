@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:minesweeper/blocs/game.bloc.dart';
+import 'package:minesweeper/pages/game.page.dart';
 import 'package:minesweeper/pages/home.page.dart';
 import 'package:minesweeper/themes/theme.dart';
+import 'package:provider/provider.dart';
 
 class SplashPage extends StatelessWidget {
+  const SplashPage({super.key});
+
   Future delay(context) async {
-    await new Future.delayed(
-        new Duration(
-          milliseconds: 3000,
-        ), () {
+    final bloc = Provider.of<GameBloc>(context);
+    await Future.delayed(const Duration(milliseconds: 3000), () {
+      bloc.select(Level.EASY);
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => HomePage(),
+          builder: (context) => const GamePage(),
         ),
       );
     });
@@ -23,7 +27,7 @@ class SplashPage extends StatelessWidget {
     delay(context);
     return Scaffold(
       body: Container(
-        color: Color(0xffbcbcbc),
+        color: const Color(0xffbcbcbc),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,12 +35,12 @@ class SplashPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(
+                  padding: EdgeInsets.only(
                       left: 8.0, right: 8.0, top: 8.0, bottom: 16.0),
                   child: Text(
-                    "Campo Minado",
+                    "Minesweeper",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,

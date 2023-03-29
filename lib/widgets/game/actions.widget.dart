@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:minesweeper/blocs/game.bloc.dart';
 import 'package:minesweeper/themes/theme.dart';
 import 'package:provider/provider.dart';
 
 class GameActions extends StatelessWidget {
+  const GameActions({super.key});
+
   @override
   Widget build(BuildContext context) {
     final bloc = Provider.of<GameBloc>(context);
@@ -33,10 +36,10 @@ class GameActions extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             bloc.win
-                                ? "Parabéns! Recomeçar?"
+                                ? "Congratulations! Restart?"
                                 : bloc.lose
-                                    ? "Você perdeu! Recomeçar?"
-                                    : "Iniciar",
+                                    ? "You lost! Restart?"
+                                    : "Start",
                             style: TextStyle(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
@@ -47,7 +50,9 @@ class GameActions extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      print("clicando em restart...");
+                      if (kDebugMode) {
+                        print("clicando em restart...");
+                      }
                       bloc.restart();
                     },
                   ),

@@ -5,17 +5,19 @@ import 'package:minesweeper/widgets/game/game.widget.dart';
 import 'package:minesweeper/widgets/game/scoreboard.widget.dart';
 
 class GamePage extends StatelessWidget {
+  const GamePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: gameAppBar(),
       body: ListView(
         children: [
-          Scoreboard(),
+          const Scoreboard(),
           InteractiveViewer(
-            child: Game(),
+            child: const Game(),
           ),
-          GameActions(),
+          const GameActions(),
         ],
       ),
     );

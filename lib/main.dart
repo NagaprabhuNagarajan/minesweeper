@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Campo Minado',
+        title: 'Minesweeper',
         theme: appThemeSimple(),
-        home: SplashPage(),
+        home: const SplashPage(),
         debugShowCheckedModeBanner: false,
       ),
     );

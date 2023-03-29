@@ -5,6 +5,8 @@ import 'package:minesweeper/themes/theme.dart';
 import 'package:provider/provider.dart';
 
 class Scoreboard extends StatelessWidget {
+  const Scoreboard({super.key});
+
   @override
   Widget build(BuildContext context) {
     final bloc = Provider.of<GameBloc>(context);
@@ -45,7 +47,7 @@ class Scoreboard extends StatelessWidget {
                         children: [
                           Text(
                             "${bloc.mines}",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 28,
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
@@ -100,8 +102,9 @@ class Scoreboard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            "${_printDuration(Duration(seconds: bloc.seconds.toInt()))}",
-                            style: TextStyle(
+                            _printDuration(
+                                Duration(seconds: bloc.seconds.toInt())),
+                            style: const TextStyle(
                               fontSize: 28,
                               color: Colors.red,
                               fontWeight: FontWeight.bold,

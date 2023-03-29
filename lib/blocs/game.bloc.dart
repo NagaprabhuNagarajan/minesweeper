@@ -1,3 +1,4 @@
+// ignore_for_file: constant_identifier_names, avoid_print
 import 'dart:async';
 import 'dart:math';
 
@@ -333,7 +334,7 @@ class GameBloc extends ChangeNotifier {
   start() {
     started = true;
     timer = Timer.periodic(
-      Duration(seconds: 1),
+      const Duration(seconds: 1),
       (Timer t) => updateTime(),
     );
     notifyListeners();
@@ -414,7 +415,7 @@ class GameBloc extends ChangeNotifier {
   int _random(int min, int max) {
     Random rnd;
     int min = 0;
-    rnd = new Random();
+    rnd = Random();
     var result = min + rnd.nextInt(max - min);
     return result;
   }

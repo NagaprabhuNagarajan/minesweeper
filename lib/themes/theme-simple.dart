@@ -1,8 +1,9 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 const brightness = Brightness.light;
 const primaryColor = Colors.grey;
-const accentColor = const Color(0xFFFFFFFF);
+const accentColor = Color(0xFFFFFFFF);
 const primarySwatch = Colors.grey;
 
 ThemeData appThemeSimple() {
@@ -26,13 +27,13 @@ BoxDecoration buildBoxDecorationScoreBoard() {
 }
 
 BoxDecoration buildBoxDecorationClicked() {
-  return BoxDecoration(
+  return const BoxDecoration(
     color: Color(0xffbcbcbc),
   );
 }
 
 BoxDecoration buildBoxDecorationIn() {
-  return BoxDecoration(
+  return const BoxDecoration(
     color: Color(0xffbcbcbc),
     border: Border(
       top: BorderSide(color: Colors.grey, width: 3.0),
@@ -44,8 +45,8 @@ BoxDecoration buildBoxDecorationIn() {
 }
 
 BoxDecoration buildBoxDecorationOut() {
-  return BoxDecoration(
-    color: Color(0xeeeeee),
+  return const BoxDecoration(
+    color: Color(0x00eeeeee),
     border: Border(
       top: BorderSide(color: Colors.white, width: 3.0),
       left: BorderSide(color: Colors.white, width: 3.0),

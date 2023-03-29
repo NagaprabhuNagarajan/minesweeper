@@ -25,14 +25,12 @@ class Square extends StatelessWidget {
           height: 25,
           decoration: buildBoxDecorationOut(),
         );
-        break;
       case opened:
         return Container(
           width: 25,
           height: 25,
           decoration: buildBoxDecorationClicked(),
         );
-        break;
       case hasFlag:
         return Container(
           width: 25,
@@ -40,7 +38,6 @@ class Square extends StatelessWidget {
           decoration: buildBoxDecorationClicked(),
           child: SvgPicture.asset("assets/images/flag.svg"),
         );
-        break;
       case hasMine:
         return Container(
           width: 25,
@@ -48,7 +45,6 @@ class Square extends StatelessWidget {
           decoration: buildBoxDecorationIn(),
           child: SvgPicture.asset("assets/images/mine.svg"),
         );
-        break;
       default:
         return Container(
           width: 25,
@@ -71,17 +67,13 @@ class Square extends StatelessWidget {
   getColor(value) {
     switch (value) {
       case 1:
-        return Color(0xff000051);
-        break;
+        return const Color(0xff000051);
       case 2:
         return Colors.green;
-        break;
       case 3:
         return Colors.red;
-        break;
       case 4:
         return Colors.purple;
-        break;
       default:
     }
   }

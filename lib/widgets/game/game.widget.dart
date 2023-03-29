@@ -5,6 +5,8 @@ import 'package:minesweeper/widgets/game/square.widget.dart';
 import 'package:provider/provider.dart';
 
 class Game extends StatelessWidget {
+  const Game({super.key});
+
   @override
   Widget build(BuildContext context) {
     GameBloc bloc = Provider.of<GameBloc>(context);
@@ -14,7 +16,7 @@ class Game extends StatelessWidget {
         alignment: Alignment.center,
         decoration: buildBoxDecorationIn(),
         child: GridView.builder(
-          physics: ScrollPhysics(),
+          physics: const ScrollPhysics(),
           shrinkWrap: true,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: bloc.rows,

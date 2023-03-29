@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 AppBar gameAppBar() {
   return AppBar(
-    title: Text(
-      "Campo Minado",
+    title: const Text(
+      "Minesweeper",
       style: TextStyle(
         fontSize: 28,
         fontWeight: FontWeight.bold,
         fontFamily: 'TickingTimebombBB',
       ),
     ),
-    actions: [],
+    actions: const [],
     centerTitle: true,
   );
 }
